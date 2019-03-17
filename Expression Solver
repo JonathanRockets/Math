@@ -1,0 +1,13 @@
+from sympy.solvers import solve
+from sympy import Symbol, pprint
+
+
+if __name__ == '__main__':
+    x = Symbol('x')
+    y = Symbol('y')
+    expression = input("please write the expression that you would like to solve: ")
+    variable = input("would you like to solve for x or y?")
+
+    solution = solve(expression,variable)
+    pprint(solution)
+
