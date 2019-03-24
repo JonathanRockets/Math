@@ -1,0 +1,9 @@
+from sympy import substitution, symbols
+
+x = symbols('x')
+expression = x+101
+number = 34
+solution = expression.subs(x,number)
+
+print("here is your solution")
+print(solution)
