@@ -1,0 +1,21 @@
+from sympy import Symbol, sympify, solve
+from sympy.plotting import plot
+def plot_expression(expr1, expr2):
+    y = Symbol('y')
+    solutions = solve(expr1, y)
+    solutions2 = solve(expr2, y)
+    expr_y = solutions[0]
+    expr_y2 = solutions2[0]
+    plot(expr_y,expr_y2, title='jonathans plot', xlabel = 'speed', ylabel="time", line_color="red")
+if __name__=='__main__':
+    expr1 = input('Enter your expression in terms of x and y:')
+    expr2 = input('Enter your expression in terms of x and y:')
+    try:
+        expr1 = sympify(expr1)
+        expr2 = sympify(expr2)
+    except SympifyError:
+        print('Invalid input')
+    else:
+        plot_expression(expr1,expr2)
+
+
